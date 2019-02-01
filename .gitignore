@@ -10,4 +10,6 @@ webapps/oedbg/
 webapps/oemanager/
 webapps/ROOT/
 
+webapps/noauth/WEB-INF/adapters/
+
 *.war
