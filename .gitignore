@@ -1,0 +1,13 @@
+bin/
+common/
+logs/
+openedge/
+temp/
+work/
+
+webapps/manager/
+webapps/oedbg/
+webapps/oemanager/
+webapps/ROOT/
+
+*.war

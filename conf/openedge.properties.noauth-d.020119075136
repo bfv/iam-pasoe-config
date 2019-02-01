@@ -1,0 +1,141 @@
+
+%% Updated property file
+%% Feb 1, 2019 7:49:21 AM
+
+##########################################################################
+ ##                                                                      ##
+ ##        Copyright (c) 1998-2017 by Progress Software Corporation      ##
+ ##                                                                      ##
+ ## All rights reserved.  No part of this program or document may be     ##
+ ## reproduced in any form or by any means without permission in writing ##
+ ## from Progress Software Corporation.                                  ##
+ ##                                                                      ##
+ ##########################################################################
+ #
+ # -------------------- openedge.properties ------------------------------
+ #
+ # Property File for the Pacific Application Server for OpenEdge
+ #
+ #
+ # This definition file includes the properties that you can define in
+ # a Pacific AppServer for OpenEdge.
+ #
+ # All information about the properties in this property file may be found
+ # in the file:
+ #
+ #          openedge.properties.README.
+ #
+ ##########################################################################
+ ##
+ #
+ # AppServer specific properties
+ #
+[AppServer]
+    collectMetrics=1
+    applications=pas-auth
+    statusEnabled=1
+    allowRuntimeUpdates=0
+
+[AppServer.Agent]
+    numInitialSessions=5
+    sessionStartupProcParam=
+    sessionConnectProc=
+    agentStartupProc=
+    noSessionCache=0
+    lockAllExtLib=
+    agentMinPort=62002
+    sessionStartupProc=
+    usingThreadSafeExtLib=
+    workDir=${CATALINA_BASE}/work
+    binaryUploadMaxSize=0
+    keyAlias=
+    agentMaxPort=62202
+    sslAlgorithms=
+    sessionExecutionTimeLimit=0
+    agentStartupProcParam=
+    sessionDeactivateProc=
+    sessionTimeout=180
+    flushStatsData=0
+    collectStatsData=0
+    sessionShutdownProc=
+    fileUploadDirectory=
+    uuid=
+    # keyStorePasswd=
+    keyStorePath=${DLC}/keys/
+    lockAllNonThreadSafeExtLib=
+    PROPATH=${CATALINA_BASE}/openedge,${DLC}/tty,${DLC}/tty/netlib/OpenEdge.Net.pl
+    sessionDisconnProc=
+    infoVersion=9010
+    agentShutdownProc=
+    keyAliasPasswd=
+    sessionActivateProc=
+
+[AppServer.Agent.pas-auth]
+    numInitialSessions=2
+    uuid=http://CASSINI:15901/pas-auth
+    PROPATH=${CATALINA_BASE}/webapps/ROOT/WEB-INF/openedge,${CATALINA_BASE}/openedge,${DLC}/tty,${DLC}/tty/netlib/OpenEdge.Net.pl
+
+ #
+ #  Default properties for Session Manager
+ #
+[AppServer.SessMgr]
+    publishDir=${catalina.base}/openedge
+    idleResourceTimeout=0
+    maxABLSessionsPerAgent=200
+    numInitialAgents=1
+    agentLogFile=
+    socketTimeout=3000
+    requestWaitTimeout=15000
+    agentLoggingLevel=2
+    agentStartLimit=1
+    idleSessionTimeout=300000
+    maxAgents=10
+    minAgents=0
+    idleAgentTimeout=300000
+    agentExecFile=${psc.as.oe.dlc}/bin/_mproapsv
+    ipver=IPv4
+    agentListenerTimeout=10000
+    agentLogEntryTypes=
+    connectionWaitTimeout=3000
+    agentStartupParam=-T "${catalina.base}/temp"
+    idleConnectionTimeout=300000
+    agentWatchdogTimeout=3000
+    maxConnectionsPerAgent=16
+
+[AppServer.SessMgr.pas-auth]
+    agentLogEntryTypes=ASPlumbing,DB.Connects
+    collectMetrics=3
+    agentLogFile=${catalina.base}/logs/pas-auth.agent.log
+
+[pas-auth]
+    webApps=ROOT
+
+[pas-auth.ROOT]
+    collectMetrics=1
+    statusEnabled=1
+    allowRuntimeUpdates=0
+
+[pas-auth.ROOT.APSV]
+    useHTTPSessions=1
+    enableRequestChunking=1
+    adapterEnabled=1
+
+[pas-auth.ROOT.REST]
+    adapterEnabled=1
+
+[pas-auth.ROOT.SOAP]
+    adminSoapAction=urn:services-progress-com:wsa-admin:01
+    adminEnabled=1
+    debugClients=
+    adapterEnabled=1
+    wsdlEnabled=1
+    wsaUrl=http://${psc.as.host.name}:${psc.as.http.port}/soap
+
+[pas-auth.ROOT.WEB]
+    defaultCookieDomain=
+    wsRoot=/static/webspeed
+    srvrDebug=1
+    defaultHandler=OpenEdge.Web.CompatibilityHandler
+    adapterEnabled=1
+    defaultCookiePath=
+    srvrAppMode=development

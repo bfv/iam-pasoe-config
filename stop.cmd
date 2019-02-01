@@ -1,0 +1,2 @@
+bin\tcman.bat stop
+
