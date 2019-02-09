@@ -11,5 +11,6 @@ webapps/oemanager/
 webapps/ROOT/
 
 webapps/noauth/WEB-INF/adapters/
+webapps/oauth2/WEB-INF/adapters/
 
 *.war
